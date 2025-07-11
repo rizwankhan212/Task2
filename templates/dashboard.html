@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1 class="mb-4">Welcome, {{ current_user.username }}!</h1>
+<p>This is your administrator dashboard. You can manage employee records from here.</p>
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">View Employees</h5>
+                <p class="card-text">Browse all employee records.</p>
+                <a href="{{ url_for('list_employees') }}" class="btn btn-primary">Go to Employees</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Add New Employee</h5>
+                <p class="card-text">Create a new employee record.</p>
+                <a href="{{ url_for('create_employee') }}" class="btn btn-success">Add Employee</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Register New Admin</h5>
+                <p class="card-text">Create a new administrator account.</p>
+                <a href="{{ url_for('register') }}" class="btn btn-info">Register Admin</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
